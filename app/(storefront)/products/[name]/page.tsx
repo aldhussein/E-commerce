@@ -40,7 +40,7 @@ async function getData(productCategory: string) {
       });
 
       return {
-        title: "Products for Men",
+        title: "Laptop Products",
         data: data,
       };
     }
@@ -60,7 +60,7 @@ async function getData(productCategory: string) {
       });
 
       return {
-        title: "Products to Women",
+        title: "Desktop Products",
         data: data,
       };
     }
@@ -80,7 +80,7 @@ async function getData(productCategory: string) {
       });
 
       return {
-        title: "Products for Kids",
+        title: "Gaming Products",
         data: data,
       };
     }

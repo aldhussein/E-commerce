@@ -14,6 +14,8 @@ const nextConfig = {
         port: "",
       },
     ],
+
+    domains: ['images.unsplash.com'],
   },
 };
 
