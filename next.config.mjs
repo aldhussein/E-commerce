@@ -15,7 +15,7 @@ const nextConfig = {
       },
     ],
 
-    domains: ['images.unsplash.com', 'www.hp.com','www.dell.com'],
+    domains: ['images.unsplash.com', 'www.hp.com','i.dell.com', 'dlcdnwebimgs.asus.com'],
   },
 };
 
