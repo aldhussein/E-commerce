@@ -69,4 +69,5 @@ enum Category {
  laptops
  desktops
  gaming
+ pcparts
 }

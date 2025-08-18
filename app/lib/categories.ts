@@ -14,4 +14,9 @@ export const categories = [
     title: "Gaming",
     name: "gaming",
   },
+    {
+    id: 4,
+    title: "Pc-Parts",
+    name: "pcparts",
+  },
 ];

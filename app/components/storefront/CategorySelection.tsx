@@ -65,6 +65,22 @@ export function CategoriesSelection() {
             </Link>
           </div>
         </div>
+
+        <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
+          <Image
+            src={women}
+            alt="Women product image"
+            className="object-bottom object-cover sm:absolute sm:inset-0 sm:w-full sm:h-full"
+          />
+          <div className="bg-gradient-to-b from-transparent to-black opacity-55 sm:absolute sm:inset-0" />
+          <div className="p-6 flex items-end sm:absolute sm:inset-0">
+            <Link href="/products/desktops">
+              <h3 className="text-white font-semibold">Computer Parts</h3>
+              <p className="mt-1 text-sm text-white">Shop Now</p>
+            </Link>
+          </div>
+        </div>
+
       </div>
     </div>
   );

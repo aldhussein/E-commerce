@@ -30,6 +30,11 @@ export const navbarLinks = [
     name: "Gaming",
     href: "/products/gaming",
   },
+    {
+    id: 5,
+    name: "PC Parts",
+    href: "/products/pcparts",
+  },
 ];
 
 export function NavbarLinks() {
