@@ -15,7 +15,7 @@ const nextConfig = {
       },
     ],
 
-    domains: ['images.unsplash.com', 'https://www.hp.com'],
+    domains: ['images.unsplash.com', 'www.hp.com'],
   },
 };
 
