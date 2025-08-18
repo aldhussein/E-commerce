@@ -7,11 +7,11 @@ export const categories = [
   {
     id: 1,
     title: "Desktops",
-    name: "Desktops",
+    name: "desktops",
   },
   {
     id: 3,
     title: "Gaming",
-    name: "Gaming",
+    name: "gaming",
   },
 ];

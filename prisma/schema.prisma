@@ -66,7 +66,7 @@ enum ProductStatus {
 }
 
 enum Category {
-  men
-  women
-  kids
+ laptops
+ desktops
+ gaming
 }
