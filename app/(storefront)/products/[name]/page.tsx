@@ -24,11 +24,11 @@ async function getData(productCategory: string) {
         data: data,
       };
     }
-    case "men": {
+    case "laptops": {
       const data = await prisma.product.findMany({
         where: {
           status: "published",
-          category: "men",
+          category: "laptops",
         },
         select: {
           name: true,
@@ -44,11 +44,11 @@ async function getData(productCategory: string) {
         data: data,
       };
     }
-    case "women": {
+    case "desktops": {
       const data = await prisma.product.findMany({
         where: {
           status: "published",
-          category: "women",
+          category: "desktops",
         },
         select: {
           name: true,
@@ -64,11 +64,11 @@ async function getData(productCategory: string) {
         data: data,
       };
     }
-    case "kids": {
+    case "gaming": {
       const data = await prisma.product.findMany({
         where: {
           status: "published",
-          category: "kids",
+          category: "gaming",
         },
         select: {
           name: true,

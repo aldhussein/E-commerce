@@ -17,18 +17,18 @@ export const navbarLinks = [
   },
   {
     id: 2,
-    name: "Men",
-    href: "/products/men",
+    name: "Laptos",
+    href: "/products/laptops",
   },
   {
     id: 3,
-    name: "Women",
-    href: "/products/women",
+    name: "Desktops",
+    href: "/products/desktops",
   },
   {
     id: 4,
-    name: "Kids",
-    href: "/products/kids",
+    name: "Gaming",
+    href: "/products/gaming",
   },
 ];
 
