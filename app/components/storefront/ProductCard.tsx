@@ -31,6 +31,7 @@ export function ProductCard({ item }: iAppProps) {
                 <Image
                   src={item}
                   alt="Product Image"
+                  quality={100}
                   fill
                   className="object-cover object-center w-full h-full rounded-lg"
                 />
