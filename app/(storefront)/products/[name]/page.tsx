@@ -84,6 +84,28 @@ async function getData(productCategory: string) {
         data: data,
       };
     }
+
+     case "pcparts": {
+      const data = await prisma.product.findMany({
+        where: {
+          status: "published",
+          category: "pcparts",
+        },
+        select: {
+          name: true,
+          images: true,
+          price: true,
+          id: true,
+          description: true,
+        },
+      });
+
+      return {
+        title: "Computer Parts",
+        data: data,
+      };
+    }
+
     default: {
       return notFound();
     }
