@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import all from "@/public/all.jpeg";
-import men from "@/public/men.jpeg";
-import women from "@/public/women.jpeg";
+import allproducts from "@/public/allproduct.jpg";
+import desktops from "@/public/desktops.jpg";
+import laptops from "@/public/laptops.jpg";
+import pcparts from "@/public/pcparts.jpeg";
 
 export function CategoriesSelection() {
   return (
@@ -23,7 +24,7 @@ export function CategoriesSelection() {
       <div className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8">
         <div className="group aspect-w-2 aspect-h-1 rounded-xl overflow-hidden sm:aspect-w-1 sm:row-span-2">
           <Image
-            src={all}
+            src={allproducts}
             alt="All Products Image"
             className="object-cover object-center "
           />
@@ -38,8 +39,8 @@ export function CategoriesSelection() {
 
         <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
           <Image
-            src={men}
-            alt="Products for men Image"
+            src={laptops}
+            alt="laptop products"
             className="object-bottom object-cover sm:absolute sm:inset-0 sm:w-full sm:h-full"
           />
           <div className="bg-gradient-to-b from-transparent to-black opacity-55 sm:absolute sm:inset-0" />
@@ -53,8 +54,8 @@ export function CategoriesSelection() {
 
         <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
           <Image
-            src={women}
-            alt="Women product image"
+            src={desktops}
+            alt="desktop products"
             className="object-bottom object-cover sm:absolute sm:inset-0 sm:w-full sm:h-full"
           />
           <div className="bg-gradient-to-b from-transparent to-black opacity-55 sm:absolute sm:inset-0" />
@@ -68,7 +69,7 @@ export function CategoriesSelection() {
 
         <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
           <Image
-            src={women}
+            src={pcparts}
             alt="Women product image"
             className="object-bottom object-cover sm:absolute sm:inset-0 sm:w-full sm:h-full"
           />
