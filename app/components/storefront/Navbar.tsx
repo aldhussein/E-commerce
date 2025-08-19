@@ -31,7 +31,7 @@ export async function Navbar() {
           <NavbarLinks />
         </div>
 
-        <div className="flex items-center mr-3">
+        <div className="flex items-center mr-5">
           {user ? (
             <>
               <Link href="/bag" className="group p-2 flex items-center mr-2">
