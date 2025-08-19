@@ -39,7 +39,7 @@ export function NavbarLinks() {
         ))}
       </div>
 
-      {/* Mobile Navbar */}
+      {/* Mobile Navbar  */}
       <div className="lg:hidden flex items-center ml-4">
         <button onClick={() => setOpen(!open)} className=" absolute right-3">
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
