@@ -29,7 +29,7 @@ export default async function BagRoute() {
   });
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 min-h-[55vh] mt-6">
+    <div className="max-w-2xl mx-auto mt-16 min-h-[55vh]">
       {!cart || !cart.items ? (
         <div className="flex min-h-[400px] flex-col items-center justify-center rounded-lg border border-dashed p-8 text-center mt-20">
           <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
