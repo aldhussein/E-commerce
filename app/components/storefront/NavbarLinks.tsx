@@ -66,14 +66,14 @@ export function NavbarLinks() {
               
             ))}
 
-           <div>
-             <LoginLink>
-              <Button asChild>Sign in</Button>
-            </LoginLink>
-            
-            <RegisterLink>
-              <Button asChild>Create Account</Button>
-            </RegisterLink>
+           <div className="flex-col">
+            <Button variant="ghost" asChild>
+                <LoginLink>Sign in</LoginLink>
+              </Button>
+              <span className="h-6 w-px bg-gray-200"></span>
+              <Button variant="ghost" asChild>
+                <RegisterLink>Create Account</RegisterLink>
+              </Button>
            </div>
 
           </div>
