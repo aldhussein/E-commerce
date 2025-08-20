@@ -69,7 +69,7 @@ export function NavbarLinks({user}: any) {
           {user ? <Button variant="ghost" asChild className="bg-red-600 text-white font-bold hover:bg-red-500">
                 <LogoutLink>Logout</LogoutLink>
               </Button> : (
-             <div className="flex-col">
+             <div className="flex-col gap-4">
             <Button variant="ghost" asChild className="bg-indigo-900 text-white font-bold hover:bg-indigo-700">
                 <LoginLink>Sign in</LoginLink>
               </Button>
