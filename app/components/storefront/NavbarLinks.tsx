@@ -17,9 +17,12 @@ export const navbarLinks = [
   { id: 5, name: "PC Parts", href: "/products/pcparts" },
 ];
 
-export function NavbarLinks({user}: any) {
+
+
+export function NavbarLinks({user, userEmail}: {user: any, userEmail: string}) {
   const location = usePathname();
   const [open, setOpen] = useState(false);
+  
 
   return (
     <>
@@ -66,7 +69,7 @@ export function NavbarLinks({user}: any) {
               
             ))}
 
-            {user.email === "aldhusseinali@gmail.com" ? (
+            {userEmail === "aldhusseinali@gmail.com" ? (
 
               <Link
               href={'/dashboard'}

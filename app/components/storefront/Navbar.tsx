@@ -11,10 +11,14 @@ import {
 import { redis } from "@/app/lib/redis";
 import { Cart } from "@/app/lib/interfaces";
 
+
+
+
 export async function Navbar() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-
+  const userEmail = user?.email as string;
+  
   const cart: Cart | null = await redis.get(`cart-${user?.id}`);
 
   const total = cart?.items.reduce((sum, item) => sum + item.quantity, 0) || 0;
@@ -28,7 +32,7 @@ export async function Navbar() {
               ALD<span className="text-primary">TECHs</span>
             </h1>
           </Link>
-          <NavbarLinks user={user} />
+          <NavbarLinks user={user} userEmail={userEmail} />
         </div>
 
         <div className="flex items-center mr-8">
