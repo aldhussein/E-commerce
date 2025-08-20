@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { Button } from "@/components/ui/button";
 
 export const navbarLinks = [
   { id: 0, name: "Home", href: "/" },
@@ -61,7 +63,19 @@ export function NavbarLinks() {
               >
                 {item.name}
               </Link>
+              
             ))}
+
+           <div>
+             <LoginLink>
+              <Button asChild>Sign in</Button>
+            </LoginLink>
+            
+            <RegisterLink>
+              <Button asChild>Create Account</Button>
+            </RegisterLink>
+           </div>
+
           </div>
         )}
       </div>
