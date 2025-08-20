@@ -66,7 +66,7 @@ export function NavbarLinks() {
               
             ))}
 
-           <div className="flex-col ">
+           <div className="flex-col">
             <Button variant="ghost" asChild>
                 <LoginLink>Sign in</LoginLink>
               </Button>
