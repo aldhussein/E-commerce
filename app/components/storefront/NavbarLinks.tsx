@@ -66,6 +66,22 @@ export function NavbarLinks({user}: any) {
               
             ))}
 
+            {user.email === "aldhusseinali@gmail.com" ? (
+
+              <Link
+              href={'/dashboard'}
+              className={cn(
+                 location === '/dashboard'
+                    ? "bg-muted"
+                    : "hover:bg-muted hover:bg-opacity-75",
+                  "block px-4 py-2 rounded-md font-medium"
+                )}>
+                 Dashboard
+              </Link>
+
+            ) : null
+            }
+
           {user ? <Button variant="ghost" asChild className="bg-red-600 text-white font-bold hover:bg-red-500">
                 <LogoutLink>Logout</LogoutLink>
               </Button> : (
