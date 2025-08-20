@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "@/components/ui/button";
 
 export const navbarLinks = [
@@ -66,13 +66,15 @@ export function NavbarLinks({user}: any) {
               
             ))}
 
-          {user ? null : (
+          {user ? <Button variant="ghost" asChild className="bg-red-600 text-white font-bold hover:bg-red-500">
+                <LogoutLink>Logout</LogoutLink>
+              </Button> : (
              <div className="flex-col">
-            <Button variant="ghost" asChild>
+            <Button variant="ghost" asChild className="bg-indigo-900 text-white font-bold hover:bg-indigo-700">
                 <LoginLink>Sign in</LoginLink>
               </Button>
               <span className="h-6 w-px bg-gray-200"></span>
-              <Button variant="ghost" asChild>
+              <Button variant="ghost" asChild className="bg-indigo-900 text-white font-bold hover:bg-indigo-700">
                 <RegisterLink>Create Account</RegisterLink>
               </Button>
            </div>
