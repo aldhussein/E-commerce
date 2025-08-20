@@ -17,7 +17,7 @@ export const navbarLinks = [
   { id: 5, name: "PC Parts", href: "/products/pcparts" },
 ];
 
-export function NavbarLinks() {
+export function NavbarLinks({user}: any) {
   const location = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -66,7 +66,8 @@ export function NavbarLinks() {
               
             ))}
 
-           <div className="flex-col">
+          {user ? null : (
+             <div className="flex-col">
             <Button variant="ghost" asChild>
                 <LoginLink>Sign in</LoginLink>
               </Button>
@@ -75,6 +76,7 @@ export function NavbarLinks() {
                 <RegisterLink>Create Account</RegisterLink>
               </Button>
            </div>
+          )}
 
           </div>
         )}

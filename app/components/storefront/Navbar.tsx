@@ -28,7 +28,7 @@ export async function Navbar() {
               ALD<span className="text-primary">TECHs</span>
             </h1>
           </Link>
-          <NavbarLinks />
+          <NavbarLinks user={user} />
         </div>
 
         <div className="flex items-center mr-8">
