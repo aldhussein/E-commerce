@@ -23,15 +23,19 @@ export default async function DashboardLayout({
 }) {
   noStore();
 
-  const { getUser } = getKindeServerSession();
+  const { getUser, getUserRoles } = getKindeServerSession();
   const user = await getUser();
+  const roles = await getUserRoles();
 
-  // Make sure TypeScript knows roles might exist
-  const userWithRoles = user as (typeof user & { roles?: string[] });
+  // ✅ Check login
+  if (!user) {
+    redirect("/");
+  }
 
-  // If not logged in OR not an admin → redirect home
-  if (!userWithRoles || !userWithRoles.roles?.includes("admin")) {
-    redirect("/"); // ✅ use redirect() directly in App Router
+  // ✅ Check roles properly
+  const roleNames = roles?.map((r) => r.key) ?? [];
+  if (!roleNames.includes("admin")) {
+    redirect("/");
   }
 
   return (
