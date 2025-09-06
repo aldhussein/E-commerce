@@ -30,10 +30,13 @@ export default async function DashboardLayout({
     redirect("/");
   }
 
-  // ✅ Fetch roles from claims
+  // ✅ Fetch roles from custom claim
   const rolesClaim = await getClaim("roles");
-  const roles: string[] = (rolesClaim?.value as string[]) ?? [];
+  const roles = Array.isArray(rolesClaim?.value)
+    ? (rolesClaim.value as string[])
+    : [];
 
+  // ✅ Redirect non-admins
   if (!roles.includes("admin")) {
     redirect("/");
   }
