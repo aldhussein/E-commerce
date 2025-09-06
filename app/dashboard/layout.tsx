@@ -23,18 +23,18 @@ export default async function DashboardLayout({
 }) {
   noStore();
 
-  const { getUser, getUserRoles } = getKindeServerSession();
+  const { getUser, getClaim } = getKindeServerSession();
   const user = await getUser();
-  const roles = await getUserRoles();
 
-  // ✅ Check login
   if (!user) {
     redirect("/");
   }
 
-  // ✅ Check roles properly
-  const roleNames = roles?.map((r) => r.key) ?? [];
-  if (!roleNames.includes("admin")) {
+  // ✅ Fetch roles from claims
+  const rolesClaim = await getClaim("roles");
+  const roles: string[] = (rolesClaim?.value as string[]) ?? [];
+
+  if (!roles.includes("admin")) {
     redirect("/");
   }
 
