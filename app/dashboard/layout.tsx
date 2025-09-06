@@ -16,6 +16,11 @@ import { redirect } from "next/navigation";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { unstable_noStore as noStore } from "next/cache";
 
+const allowedEmails = [
+  "aldhusseinali@gmail.com",
+  "gamerdaadi@@gmail.com",
+];
+
 export default async function DashboardLayout({
   children,
 }: {
@@ -25,9 +30,9 @@ export default async function DashboardLayout({
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "aldhusseinali@gmail.com") {
-    return redirect("/");
-  }
+  if (!user || !allowedEmails.includes(user.email)) {
+  return redirect("/");
+}
   return (
     <div className="flex w-full flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <header className="sticky top-0 flex h-16 items-center justify-between gap-4 border-b bg-white">
