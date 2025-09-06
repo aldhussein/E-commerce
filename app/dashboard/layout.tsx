@@ -3,6 +3,7 @@ import { DashboardNavigation } from "../components/dashboard/DasboardNavigation"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { CircleUser, MenuIcon } from "lucide-react";
+import { AllowedEmails } from "@/lib/config";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,7 +26,7 @@ export default async function DashboardLayout({
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || user.email !== "aldhusseinali@gmail.com") {
+  if (!user || !AllowedEmails.includes(user.email as string)) {
     return redirect("/");
   }
   return (
