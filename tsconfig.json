@@ -28,6 +28,6 @@
   ".next/types/**/*.ts",
   "kinde.d.ts",
   "types/**/*.d.ts"
-]
+],
   "exclude": ["node_modules"]
 }
