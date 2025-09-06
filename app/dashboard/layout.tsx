@@ -30,7 +30,7 @@ export default async function DashboardLayout({
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || !allowedEmails.includes(user.email as string)) {
+  if (!user || !user.roles.includes("admin")) {
   return redirect("/");
 }
   return (
