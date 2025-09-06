@@ -30,9 +30,19 @@ export default async function DashboardLayout({
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user || !user.roles.includes("admin")) {
-  return redirect("/");
-}
+  
+  // TypeScript fix: assert roles exist
+  const userWithRoles = user as (typeof user & { roles?: string[] });
+
+  // If user is not logged in OR not admin, redirect to home page
+  if (!userWithRoles || !userWithRoles.roles?.includes("admin")) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
   return (
     <div className="flex w-full flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <header className="sticky top-0 flex h-16 items-center justify-between gap-4 border-b bg-white">
