@@ -16,41 +16,24 @@ import { redirect } from "next/navigation";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { unstable_noStore as noStore } from "next/cache";
 
-const allowedEmails = [
-  "aldhusseinali@gmail.com",
-  "gamerdaadi@@gmail.com",
-];
-
-const { getUser } = getKindeServerSession();
-  const user = await getUser();
-
-  
-  // TypeScript fix: assert roles exist
-  const userWithRoles = user as (typeof user & { roles?: string[] });
-
-  // If user is not logged in OR not admin, redirect to home page
-  
-  if (!userWithRoles || !userWithRoles.roles?.includes("admin")) {
-    return {
-      redirect: {
-        destination: "/", // redirect home
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: { user: userWithRoles }, // pass user to page
-  };
-};
-
 export default async function DashboardLayout({
   children,
 }: {
   children: ReactNode;
 }) {
   noStore();
-  
+
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+
+  // Make sure TypeScript knows roles might exist
+  const userWithRoles = user as (typeof user & { roles?: string[] });
+
+  // If not logged in OR not an admin → redirect home
+  if (!userWithRoles || !userWithRoles.roles?.includes("admin")) {
+    redirect("/"); // ✅ use redirect() directly in App Router
+  }
+
   return (
     <div className="flex w-full flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <header className="sticky top-0 flex h-16 items-center justify-between gap-4 border-b bg-white">
