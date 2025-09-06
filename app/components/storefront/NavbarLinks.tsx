@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "@/components/ui/button";
+import { AllowedEmails } from "@/lib/config";
 
 export const navbarLinks = [
   { id: 0, name: "Home", href: "/" },
@@ -42,6 +43,21 @@ export function NavbarLinks({user, userEmail}: {user: any, userEmail: string}) {
             {item.name}
           </Link>
         ))}
+        {AllowedEmails.includes(userEmail as string) ? (
+
+              <Link
+              href={'/dashboard'}
+              className={cn(
+                 location === '/dashboard'
+                    ? "bg-muted"
+                    : "hover:bg-muted hover:bg-opacity-75",
+                  "block px-4 py-2 rounded-md font-medium"
+                )}>
+                 Dashboard
+              </Link>
+
+            ) : null
+            }
       </div>
 
       {/* Mobile Navbar  */}
@@ -66,10 +82,9 @@ export function NavbarLinks({user, userEmail}: {user: any, userEmail: string}) {
               >
                 {item.name}
               </Link>
-              
             ))}
 
-            {userEmail === "aldhusseinali@gmail.com" ? (
+            {AllowedEmails.includes(userEmail as string) ? (
 
               <Link
               href={'/dashboard'}
